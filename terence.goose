@@ -1,0 +1,2 @@
+namespace terence;
+import constants;
