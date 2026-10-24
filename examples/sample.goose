@@ -40,6 +40,7 @@ fn main() {
     print("MaxUint32 = ", MaxUint32);
     print("MaxUint64 = ", MaxUint64);
 
+    // ========================= Bits =========================
     print("\n--- exact_pow2 ---\n");
     print("exact_pow2(0)     = ", exact_pow2(0));
     print("exact_pow2(1)     = ", exact_pow2(1));
@@ -106,6 +107,32 @@ fn main() {
     print("copysign(-3.0, 1.0)          = ", copysign(-3.0, 1.0));
     print("copysign(0.0, -1.0)          = ", copysign(0.0, -1.0));
     print("signbit(copysign(0.0, -1.0)) = ", signbit(copysign(0.0, -1.0)));
+    let normlaizeFloarResult, normalizeIntResult = normalize(3.1415926535897932);
+    print("normlaize(3.1415926535897932) returns float val of = ", normlaizeFloarResult);
+    print("normalize(3.1415926535897932) returns int val of = ", normalizeIntResult);
+    let y, e = normalize(SmallestNonzeroFloat64);   // 2^-1074
+    print("y = ", y, "  e = ", e);
 
-    print("\nmain.goose: done\n");
+    // ========================= Decompose =========================
+    print("\n--- frexp / ldexp / logb ---\n");
+    let x,e = frexp(12.5);
+    print("frexp(12.5) x= ", x , " e: ", e);
+    let a = ldexp(0.78125, 4);
+    let b = ilogb(12.5);
+    let c = logb(12.5);
+    print("ldexp(0.78125, 4) a = ", a);
+    print("logb(12.5) = ", b);
+    print("ilogb(12.5) = ", c);
+    print("next_after(12.5,1) = ", next_after(12.5, 1));
+    print("next_after32(12.5,1) = ", next_after32(12.5,1));
+
+    // ========================= Floor =========================
+    print("floor(3.14159265) returns f64 value of = ", floor(3.14159265));
+    print("ceil(3.14159265) returns f64 value of = ", ceil(3.14159265));
+    print("round(3.14159265) returns f64 value of = ", round(3.14159265));
+    print("trunc(3.14159265) returns f64 value of = ", trunc(3.14159265));
+    print("round_to_even(3.14159265) return f64 value of = ", round_to_even(3.14159265));
+
+    print("fma(3.14, 12.499999999999998, 3.14 = ", fma(3.14, 12.499999999999998, 3.1));
+    print("\nsample.goose: done\n");
 }

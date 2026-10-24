@@ -238,3 +238,17 @@ fn copysign(f: f64, sign: f64) -> f64 {
     let a = abs(f);
     if signbit(sign) { -a } else { a }
 }
+
+// normalize returns a normal number y and exponent exp satisfying
+// x == y * 2**exp. It assumes x is finite and non-zero.
+//
+// Subnormal inputs are scaled up by 2^52 so that y lands in the normal
+// range; the compensating exponent is -52. Normal inputs are returned
+// unchanged with exp = 0.
+fn normalize(x: f64) -> f64, i64 {
+    let SmallestNormal = 2.2250738585072014e-308; // 2^-1022
+    if abs(x) < SmallestNormal {
+        return x * 0x1p52, -52;
+    }
+    return x, 0;
+}
