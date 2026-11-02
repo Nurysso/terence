@@ -2,6 +2,7 @@ namespace terence;
 
 import constants;
 import bits;
-import decompose;
-import floor;
-import rounding;
+import float_binary_ops;
+import float_decomposition;
+import float_rounding;
+import sqrt;

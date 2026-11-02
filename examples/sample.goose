@@ -101,6 +101,10 @@ fn main() {
     print("abs(-3.5)                    = ", abs(-3.5));
     print("abs(3.5)                     = ", abs(3.5));
     print("abs(-0.0)                    = ", abs(-0.0));
+    // let x: f64 = -0.0;
+    // let y: f32 = -0.0;
+    print("abs(-0.0)                    = ", abs(-0.0 as f32));
+    print("abs(-0.0)                    = ", abs(-0.0 ));
     print("abs(inf(-1))                 = ", abs(inf(-1)));
     print("abs(nan())                   = ", abs(nan()));
     print("copysign(3.0, -1.0)          = ", copysign(3.0, -1.0));
@@ -127,12 +131,26 @@ fn main() {
     print("next_after32(12.5,1) = ", next_after32(12.5,1));
 
     // ========================= Floor =========================
+    print("\n--- ceil / floor / fma / round / round_to_even / trunc ---\n");
     print("floor(3.14159265) returns f64 value of = ", floor(3.14159265));
     print("ceil(3.14159265) returns f64 value of = ", ceil(3.14159265));
     print("round(3.14159265) returns f64 value of = ", round(3.14159265));
     print("trunc(3.14159265) returns f64 value of = ", trunc(3.14159265));
     print("round_to_even(3.14159265) return f64 value of = ", round_to_even(3.14159265));
-
     print("fma(3.14, 12.499999999999998, 3.14 = ", fma(3.14, 12.499999999999998, 3.1));
+
+    print("\n--- sqrt / sqrt_newton ---\n");
+    print("sqrt(2)    = ", sqrt(2.0));
+    print("sqrt(10)   = ", sqrt(10.0));
+    print("sqrt(1e6)  = ", sqrt(1e6));
+    print("sqrt(0.25) = ", sqrt(0.25));
+    print("cbrt(27) = ", cbrt(27.0));
+    print("sqrt(2)    = ", sqrt_newton(2.0));
+    print("sqrt(10)   = ", sqrt_newton(10.0));
+    print("sqrt(1e6)  = ", sqrt_newton(1e6));
+    print("sqrt(0.25) = ", sqrt_newton(0.25));
+    print("hypot(2.0,5.0) as f32 = ", hypot(2.0,5.0) as f32);
+    print("hypot(2.0,5.0) = ", hypot(2.0,5.0));
+
     print("\nsample.goose: done\n");
 }
